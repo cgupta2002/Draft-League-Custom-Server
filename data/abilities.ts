@@ -5569,6 +5569,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 278,
 	},
 
+	// Draft League Custom
+	acidreflux: {
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Physical') {
+				this.add('-activate', target, 'ability: Acid Reflux');
+				source.trySetStatus('psn', target);
+
+			}
+		},
+		flags: {},
+		name: "Acid Reflux",
+		rating: 3.5,
+		num: 401,
+	},
+
+
+
 	// CAP
 	mountaineer: {
 		onDamage(damage, target, source, effect) {
