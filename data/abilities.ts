@@ -5585,11 +5585,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 
 	lightningpulse: {
-		onStart(pokemon) {
-			if (this.effectState.unnerved) return;
-			this.add('-ability', pokemon, 'Levitate');
-			
-		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Electric') {
