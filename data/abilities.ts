@@ -5616,7 +5616,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				ally.clearBoosts();
 				this.add('-clearboost', ally, '[from] ability: Witch\'s Broom', `[of] ${pokemon}`);
 			}
-			this.add('-ability', pokemon, 'Levitate');
 		},
 		flags: {breakable: 1},
 		name: "Witch's Broom",
