@@ -176,6 +176,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Illusion Level Mod', 'Sleep Clause Mod'],
 	},
 	{
+		name: "[Gen 9] Legends Z-A Draft",
+		mod: 'gen9legendsdraft',
+		gameType: 'doubles',
+		bestOfDefault: true,
+		ruleset: ['Terastal Clause'],
+	},
+	{
 		name: "[Gen 9] Doubles OU",
 		mod: 'gen9',
 		gameType: 'doubles',

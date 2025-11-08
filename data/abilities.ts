@@ -5612,12 +5612,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 
 	witchsbroom: {
 		onStart(pokemon) {
-			if (this.effectState.unnerved) return;
-			this.add('-ability', pokemon, 'Levitate');
 			for (const ally of pokemon.adjacentAllies()) {
 				ally.clearBoosts();
-				this.add('-clearboost', ally, '[from] ability: Curious Medicine', `[of] ${pokemon}`);
+				this.add('-clearboost', ally, '[from] ability: Witch\'s Broom', `[of] ${pokemon}`);
 			}
+			this.add('-ability', pokemon, 'Levitate');
 		},
 		flags: {breakable: 1},
 		name: "Witch's Broom",
