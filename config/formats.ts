@@ -180,7 +180,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen9legendsdraft',
 		gameType: 'doubles',
 		bestOfDefault: true,
-		ruleset: ['Terastal Clause'],
+		ruleset: ['Cancel Mod', 'Terastal Clause'],
 	},
 	{
 		name: "[Gen 9] Doubles OU",
