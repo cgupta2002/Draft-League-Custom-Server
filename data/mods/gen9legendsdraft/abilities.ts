@@ -1,5 +1,5 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
-	// Draft League Custom
+		// Draft League Custom
 	acidreflux: {
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical') {
@@ -14,11 +14,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 
 	lightningpulse: {
-		onStart(pokemon) {
-			if (this.effectState.unnerved) return;
-			this.add('-ability', pokemon, 'Levitate');
-			
-		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Electric') {
@@ -45,7 +40,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 				ally.clearBoosts();
 				this.add('-clearboost', ally, '[from] ability: Witch\'s Broom', `[of] ${pokemon}`);
 			}
-
 		},
 		flags: {breakable: 1},
 		name: "Witch's Broom",
@@ -111,6 +105,51 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		num: 408,
 	 },
 
+	 lethalsuppression: {
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Poison') {
+				if (attacker.getAbility().flags['cantsuppress']) return;
+				if (attacker.newlySwitched || this.queue.willMove(attacker)) return;
+				attacker.addVolatile('gastroacid');
+			}
+		},
+		flags:{},
+		name: "Lethal Suppression",
+		rating: 3,
+		num:411,
+	 },
+
+	 sharpdebris: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+						
+			if (move.category === 'Physical') {
+				this.add('-activate', target, 'ability: Sharp Debris');
+				side.addSideCondition('toxicspikes', target);
+				const steelHazard = this.dex.getActiveMove('Stealth Rock');
+				steelHazard.type = 'Steel';
+			}
+		},
+		flags:{},
+		name: "Sharp Debris",
+		rating: 3,
+		num:412,
+	 },
+	 
+
+	 mindcontrol: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (move.category === 'Special')
+				target.addVolatile('confusion');
+		},
+		flags:{},
+		name: "Mind Control",
+		rating:3,
+		num:413,
+	 },
+
 	 stormabsorb: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
@@ -148,4 +187,24 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 4,
 		num: 410,
 	 },
-};
+	 ange: {
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			if (!pokemon.hp) return;
+			const megaFoes = [];
+			for (const target of pokemon.foes()) {
+				if (target.baseSpecies.isMega) megaFoes.push(target);
+			}
+			if (megaFoes.length) {
+				for (const target of megaFoes) {
+					this.damage(target.baseMaxhp / 10, target, pokemon);
+					this.heal(target.baseMaxhp / 10);
+				}
+			} else {
+				this.heal(pokemon.baseMaxhp / 12);
+			}
+		},
+		name: "Ange",
+	},
+	}

@@ -5676,6 +5676,51 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 408,
 	 },
 
+	 lethalsuppression: {
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Poison') {
+				if (attacker.getAbility().flags['cantsuppress']) return;
+				if (attacker.newlySwitched || this.queue.willMove(attacker)) return;
+				attacker.addVolatile('gastroacid');
+			}
+		},
+		flags:{},
+		name: "Lethal Suppression",
+		rating: 3,
+		num:411,
+	 },
+
+	 sharpdebris: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+						
+			if (move.category === 'Physical') {
+				this.add('-activate', target, 'ability: Sharp Debris');
+				side.addSideCondition('toxicspikes', target);
+				const steelHazard = this.dex.getActiveMove('Stealth Rock');
+				steelHazard.type = 'Steel';
+			}
+		},
+		flags:{},
+		name: "Sharp Debris",
+		rating: 3,
+		num:412,
+	 },
+	 
+
+	 mindcontrol: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (move.category === 'Special')
+				target.addVolatile('confusion');
+		},
+		flags:{},
+		name: "Mind Control",
+		rating:3,
+		num:413,
+	 },
+
 	 stormabsorb: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
