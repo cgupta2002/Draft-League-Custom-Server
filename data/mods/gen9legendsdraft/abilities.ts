@@ -156,6 +156,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 				if (!this.boost({ spa: 1 })) {
 					this.add('-immune', target, '[from] ability: Storm Absorb');
 				}
+				return null;
 			}
 			if (target !== source && move.type === 'Electric') {
 				if (!this.boost({ spa: 1 })) {

@@ -1,7 +1,7 @@
 export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {
 	clefablemega: {
 		inherit: true,
-		abilities: { 0: "Serene Grace" },
+		abilities: { 0: "Friend Guard" },
 	},
 	victreebelmega: {
 		inherit: true,
@@ -23,10 +23,6 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	feraligatrmega: {
 		inherit: true,
 		abilities: { 0: "Dragon's Maw" },
-	},
-	ampharosmega: {
-		inherit: true,
-		abilities: { 0: "Fluffy" },
 	},
 	skarmorymega: {
 		inherit: true,
