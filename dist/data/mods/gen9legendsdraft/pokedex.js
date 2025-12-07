@@ -24,7 +24,7 @@ module.exports = __toCommonJS(pokedex_exports);
 const Pokedex = {
   clefablemega: {
     inherit: true,
-    abilities: { 0: "Serene Grace" }
+    abilities: { 0: "Friend Guard" }
   },
   victreebelmega: {
     inherit: true,
@@ -37,7 +37,7 @@ const Pokedex = {
   },
   dragonitemega: {
     inherit: true,
-    abilities: { 0: "Soul-Heart" }
+    abilities: { 0: "Gale Wings" }
   },
   meganiummega: {
     inherit: true,
@@ -47,13 +47,9 @@ const Pokedex = {
     inherit: true,
     abilities: { 0: "Dragon's Maw" }
   },
-  ampharosmega: {
-    inherit: true,
-    abilities: { 0: "Fluffy" }
-  },
   skarmorymega: {
     inherit: true,
-    abilities: { 0: "Tough Claws" }
+    abilities: { 0: "Sharp Debris" }
   },
   mawilemega: {
     inherit: true,
@@ -77,7 +73,7 @@ const Pokedex = {
   },
   excadrillmega: {
     inherit: true,
-    abilities: { 0: "Mold Breaker" }
+    abilities: { 0: "Tough Claws" }
   },
   audinomega: {
     inherit: true,
@@ -85,11 +81,11 @@ const Pokedex = {
   },
   scolipedemega: {
     inherit: true,
-    abilities: { 0: "Tinted Lens" }
+    abilities: { 0: "Stamina" }
   },
   scraftymega: {
     inherit: true,
-    abilities: { 0: "Shed Skin" }
+    abilities: { 0: "Stakeout" }
   },
   eelektrossmega: {
     inherit: true,
@@ -117,7 +113,7 @@ const Pokedex = {
   },
   dragalgemega: {
     inherit: true,
-    abilities: { 0: "Regenerator" }
+    abilities: { 0: "Lethal Suppression" }
   },
   floettemega: {
     inherit: true,
@@ -125,7 +121,7 @@ const Pokedex = {
   },
   malamarmega: {
     inherit: true,
-    abilities: { 0: "Contrarian" }
+    abilities: { 0: "Mind Control" }
   },
   barbaraclemega: {
     inherit: true,
@@ -145,7 +141,7 @@ const Pokedex = {
   },
   falinksmega: {
     inherit: true,
-    abilities: { 0: "Brass Bond" }
+    abilities: { 0: "Sheer Force" }
   }
 };
 //# sourceMappingURL=pokedex.js.map

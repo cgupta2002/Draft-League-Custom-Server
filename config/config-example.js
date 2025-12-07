@@ -73,7 +73,7 @@ Main's SSL deploy script from Let's Encrypt looks like:
  *   know what you are doing
  * @type {false | string[]}.
  */
-exports.proxyip = ['192.0.2.91'];
+exports.proxyip = ['127.0.0.1'];
 
 // subprocesses - the number of child processes to use for various tasks.
 //   Can be set to `0` instead of `{...}` to stop using subprocesses, if you're running out of RAM.
@@ -331,6 +331,8 @@ exports.punishmentautolock = false;
  *   This option can be used if your server has trouble with spammers mass PMing links to users, or trolls sending malicious links.
  */
 exports.restrictLinks = false;
+
+exports.nofswriting = true;
 
 /**
  * whitelist - prevent users below a certain group from doing things

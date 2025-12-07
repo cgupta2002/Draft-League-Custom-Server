@@ -1,0 +1,36 @@
+
+Error: Rule "cancelmod" in "[Gen 9] Legends Z-A Draft" already exists in "Flat Rules"
+    at DexFormats.getRuleTable (/var/www/Draft-League-Custom-Server/sim/dex-formats.ts:890:12)
+    at DexFormats.getRuleTable (/var/www/Draft-League-Custom-Server/sim/dex-formats.ts:737:24)
+    at GlobalRoomState.get formatListText [as formatListText] (/var/www/Draft-League-Custom-Server/server/rooms.ts:1491:34)
+    at GlobalRoomState.handleConnect (/var/www/Draft-League-Custom-Server/server/rooms.ts:1747:80)
+    at Object.socketConnect (/var/www/Draft-League-Custom-Server/server/users.ts:1669:15)
+    at Object.onSpawn (/var/www/Draft-League-Custom-Server/server/sockets.ts:36:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+
+Error: Rule "cancelmod" in "[Gen 9] Legends Z-A Draft" already exists in "Flat Rules"
+    at DexFormats.getRuleTable (/var/www/Draft-League-Custom-Server/sim/dex-formats.ts:890:12)
+    at DexFormats.getRuleTable (/var/www/Draft-League-Custom-Server/sim/dex-formats.ts:737:24)
+    at GlobalRoomState.get formatListText [as formatListText] (/var/www/Draft-League-Custom-Server/server/rooms.ts:1491:34)
+    at GlobalRoomState.handleConnect (/var/www/Draft-League-Custom-Server/server/rooms.ts:1747:80)
+    at Object.socketConnect (/var/www/Draft-League-Custom-Server/server/users.ts:1669:15)
+    at Object.onSpawn (/var/www/Draft-League-Custom-Server/server/sockets.ts:36:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+
+Error: Rule "cancelmod" in "[Gen 9] Legends Z-A Draft" already exists in "Flat Rules"
+    at DexFormats.getRuleTable (/var/www/Draft-League-Custom-Server/sim/dex-formats.ts:890:12)
+    at DexFormats.getRuleTable (/var/www/Draft-League-Custom-Server/sim/dex-formats.ts:737:24)
+    at GlobalRoomState.get formatListText [as formatListText] (/var/www/Draft-League-Custom-Server/server/rooms.ts:1491:34)
+    at GlobalRoomState.handleConnect (/var/www/Draft-League-Custom-Server/server/rooms.ts:1747:80)
+    at Object.socketConnect (/var/www/Draft-League-Custom-Server/server/users.ts:1669:15)
+    at Object.onSpawn (/var/www/Draft-League-Custom-Server/server/sockets.ts:36:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+
+Error: Rule "cancelmod" in "[Gen 9] Legends Z-A Draft" already exists in "Flat Rules"
+    at DexFormats.getRuleTable (/var/www/Draft-League-Custom-Server/sim/dex-formats.ts:890:12)
+    at DexFormats.getRuleTable (/var/www/Draft-League-Custom-Server/sim/dex-formats.ts:737:24)
+    at GlobalRoomState.get formatListText [as formatListText] (/var/www/Draft-League-Custom-Server/server/rooms.ts:1491:34)
+    at GlobalRoomState.handleConnect (/var/www/Draft-League-Custom-Server/server/rooms.ts:1747:80)
+    at Object.socketConnect (/var/www/Draft-League-Custom-Server/server/users.ts:1669:15)
+    at Object.onSpawn (/var/www/Draft-League-Custom-Server/server/sockets.ts:36:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
