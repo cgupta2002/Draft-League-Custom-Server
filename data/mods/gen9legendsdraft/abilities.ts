@@ -125,7 +125,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 						
 			if (move.category === 'Physical') {
 				this.add('-activate', target, 'ability: Sharp Debris');
-				side.addSideCondition('toxicspikes', target);
+				side.addSideCondition('gmaxsteelsurge', target);
 				const steelHazard = this.dex.getActiveMove('Stealth Rock');
 				steelHazard.type = 'Steel';
 			}
