@@ -14,7 +14,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	dragonitemega: {
 		inherit: true,
-		abilities: { 0: "Soul-Heart" },
+		abilities: { 0: "Gale Wings" },
 	},
 	meganiummega: {
 		inherit: true,
@@ -26,7 +26,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	skarmorymega: {
 		inherit: true,
-		abilities: { 0: "Tough Claws" },
+		abilities: { 0: "Sharp Debris" },
 	},
 	mawilemega: {
 		inherit: true,
@@ -50,7 +50,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	excadrillmega: {
 		inherit: true,
-		abilities: { 0: "Mold Breaker" },
+		abilities: { 0: "Tough Claws" },
 	},
 	audinomega: {
 		inherit: true,
@@ -58,11 +58,11 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	scolipedemega: {
 		inherit: true,
-		abilities: { 0: "Tinted Lens" },
+		abilities: { 0: "Stamina" },
 	},
 	scraftymega: {
 		inherit: true,
-		abilities: { 0: "Shed Skin" },
+		abilities: { 0: "Stakeout" },
 	},
 	eelektrossmega: {
 		inherit: true,
@@ -90,7 +90,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	dragalgemega: {
 		inherit: true,
-		abilities: { 0: "Regenerator" },
+		abilities: { 0: "Lethal Suppression" },
 	},
 	floettemega: {
 		inherit: true,
@@ -98,7 +98,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	malamarmega: {
 		inherit: true,
-		abilities: { 0: "Contrarian" },
+		abilities: { 0: "Mind Control" },
 	},
 	barbaraclemega: {
 		inherit: true,
@@ -118,6 +118,6 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	falinksmega: {
 		inherit: true,
-		abilities: { 0: "Brass Bond" },
+		abilities: { 0: "Sheer Force" },
 	},
 };
