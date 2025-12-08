@@ -29,7 +29,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	},
 	{
 		name: "[Gen 9] Legends Z-A Draft",
-		mod: 'gen9legendsdraft',
+		mod: 'gen9legendszadraft',
 		gameType: 'doubles',
 		bestOfDefault: true,
 		threads: [
