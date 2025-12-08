@@ -38,6 +38,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'VGC Timer', 'Terastal Clause', 'NatDex Mod'],
 		banlist: ['Moody', 'Hail', 'Hidden Power', 'Berserk Gene', 'Battle Bond'],
+		unbanlist: ['Drought', 'Barbed Armor', 'Lightning Pulse'],
 		onValidateSet(set, format, setHas, teamHas) {
 			const species = this.dex.species.get(set.species);
 			if (set.moves.map(x => this.toID(this.dex.moves.get(x).realMove) || x).includes('hiddenpower') &&
