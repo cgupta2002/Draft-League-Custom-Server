@@ -31,7 +31,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			`&bullet; <a href="https://www.smogon.com/forums/posts/10749086">List of Changes</a>`,
 		],
 		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'VGC Timer', 'Terastal Clause', 'NatDex Mod'],
-		banlist: ['Moody', 'Hail', 'Hidden Power', 'Berserk Gene', 'Battle Bond', 'Greninja-Bond'],
+		banlist: ['Moody', 'Hail', 'Hidden Power', 'Berserk Gene', 'Battle Bond'],
 		onValidateSet(set, format, setHas, teamHas) {
 			const species = this.dex.species.get(set.species);
 			if (set.moves.map(x => this.toID(this.dex.moves.get(x).realMove) || x).includes('hiddenpower') &&
