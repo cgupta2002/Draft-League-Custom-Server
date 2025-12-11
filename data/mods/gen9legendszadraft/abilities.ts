@@ -1,6 +1,8 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
 		// Draft League Custom
 	acidreflux: {
+		desc: "If this Pokemon is hit by a physical attack, poisons foe.",
+		shortDesc: "If this Pokemon is hit by a physical attack, poisons foe.",
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical') {
 				this.add('-activate', target, 'ability: Acid Reflux');
@@ -14,6 +16,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 
 	lightningpulse: {
+		desc: "Immune to ground type moves and electric moves are 1.3x power (Levitate + Transistor).",
+		shortDesc: "Immune to ground type moves and electric moves are 1.3x power (Levitate + Transistor).",
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Electric') {
@@ -35,6 +39,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 
 	witchsbroom: {
+		desc: "Immune to ground type moves and resets teammate's stat changes on activation (Levitate + Curious Medicine).",
+		shortDesc: "Immune to ground type moves and resets teammate's stat changes on activation (Levitate + Curious Medicine).",
 		onStart(pokemon) {
 			for (const ally of pokemon.adjacentAllies()) {
 				ally.clearBoosts();
@@ -48,6 +54,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 
 	barbedarmor: {
+		desc: "Pokemon making contact with this Pokemon lose 1/8th of their max HP and this Pokemon cannot be struck by a critical hit (Iron Barbs + Shell Armor).",
+		shortDesc: "Pokemon making contact with this Pokemon lose 1/8th of their max HP and this Pokemon cannot be struck by a critical hit (Iron Barbs + Shell Armor).",
 		onCriticalHit: false,
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
@@ -62,6 +70,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 
 	warlock: {
+		desc: "This Pokemon's attack do not make contact with the target, and this Pokemon does not take recoil damage besides Struggle/Life Orb/crash damage (Long Reach + Rock Head).",
+		shortDesc: "This Pokemon's attack do not make contact with the target, and this Pokemon does not take recoil damage besides Struggle/Life Orb/crash damage (Long Reach + Rock Head).",
 		onDamage(damage, target, source, effect) {
 			if (effect.id === 'recoil') {
 				if (!this.activeMove) throw new Error("Battle.activeMove is null");
@@ -78,6 +88,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 spiritabsorb: {
+		desc: "This Pokemon heals 1/4th of its max HP when hit by Ghost moves; Ghost immunity.",
+		shortDesc: "This Pokemon heals 1/4th of its max HP when hit by Ghost moves; Ghost immunity.",
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Ghost') {
 				if (!this.heal(target.baseMaxhp / 4)) {
@@ -93,6 +105,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 solarshield: {
+		desc: "If Sunny Day is active, this Pokemon takes 0.67x damage from all direct attacks.",
+		shortDesc: "If Sunny Day is active, this Pokemon takes 0.67x damage from all direct attacks.",
 		onSourceModifyDamage(damage, source, target, move) {
 			if (['sunnyday', 'desolateland'].includes(target.effectiveWeather())) {
 				this.debug('Solar Shield weaken');
@@ -106,6 +120,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 lethalsuppression: {
+		desc: "If this Pokemon hits a foe with a Poison move, the effect of the target's Ability is eliminated.",
+		shortDesc: "If this Pokemon hits a foe with a Poison move, the effect of the target's Ability is eliminated.",
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Poison') {
 				if (attacker.getAbility().flags['cantsuppress']) return;
@@ -120,6 +136,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 sharpdebris: {
+		desc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the opposing side.",
+		shortDesc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the opposing side.",
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 						
@@ -138,6 +156,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 
 
 	 mindcontrol: {
+		desc: "If this Pokemon hits a foe with a special move, the foe will become confused.",
+		shortDesc: "Gain 1/12 of max HP at the end of every turn. Opposing Megas lose 1/10 max HP every turn.",
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
 			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
@@ -151,6 +171,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 stormabsorb: {
+		desc: "This Pokemon draws power Water and Electric moves to raise Sp. Atk by 1; Water immunity; Electric immunity (No Redirection).",
+		shortDesc: "This Pokemon draws power Water and Electric moves to raise Sp. Atk by 1; Water immunity; Electric immunity (No Redirection).",
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
 				if (!this.boost({ spa: 1 })) {
@@ -172,6 +194,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 chillingaura:{
+		desc: "While this Pokemon is active, an Ice move used by any Pokemon has 1.33x power.",
+		shortDesc: "While this Pokemon is active, an Ice move used by any Pokemon has 1.33x power.",
 		onStart(pokemon) {
 			if (this.suppressingAbility(pokemon)) return;
 			this.add('-ability', pokemon, 'Chilling Aura');
@@ -189,6 +213,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		num: 410,
 	 },
 	 ange: {
+		desc: "Every Pokemon on the field except Mega Floette loses 1/10th of its max HP every turn.",
+		shortDesc: "Every Pokemon on the field except Mega Floette loses 1/10th of its max HP every turn.",
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {

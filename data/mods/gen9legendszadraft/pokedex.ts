@@ -54,7 +54,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	audinomega: {
 		inherit: true,
-		abilities: { 0: "Regenerator" },
+		abilities: { 0: "Healer" },
 	},
 	scolipedemega: {
 		inherit: true,
