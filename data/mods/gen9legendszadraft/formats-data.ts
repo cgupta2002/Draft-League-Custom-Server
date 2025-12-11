@@ -212,15 +212,6 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	dragonitemega: {
 		tier: "(OU)",
 	},
-	mewtwo: {
-		tier: "Uber",
-	},
-	mewtwomegax: {
-		tier: "Uber",
-	},
-	mewtwomegay: {
-		tier: "Uber",
-	},
 	chikorita: {
 		tier: "LC",
 	},
@@ -692,9 +683,6 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	greninja: {
 		tier: "OU",
 	},
-	greninjabond: {
-		tier: "OU",
-	},
 	greninjamega: {
 		tier: "OU",
 	},
@@ -871,14 +859,8 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	sliggoo: {
 		tier: "NFE",
 	},
-	sliggoohisui: {
-		tier: "NFE",
-	},
 	goodra: {
 		tier: "UU",
-	},
-	goodrahisui: {
-		tier: "OU",
 	},
 	klefki: {
 		tier: "UU",
@@ -919,47 +901,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 	avalugg: {
 		tier: "UU",
 	},
-	avalugghisui: {
-		tier: "UU",
-	},
 	noibat: {
 		tier: "LC",
 	},
 	noivern: {
 		tier: "UU",
-	},
-	xerneas: {
-		tier: "Uber",
-	},
-	yveltal: {
-		tier: "Uber",
-	},
-	zygarde: {
-		tier: "Uber",
-	},
-	zygarde10: {
-		tier: "OU",
-	},
-	zygardecomplete: {
-		tier: "Uber",
-	},
-	zygardemega: {
-		tier: "Uber",
-	},
-	diancie: {
-		tier: "UU",
-	},
-	dianciemega: {
-		tier: "OU",
-	},
-	hoopa: {
-		tier: "UU",
-	},
-	hoopaunbound: {
-		tier: "OU",
-	},
-	volcanion: {
-		tier: "OU",
 	},
 	drampa: {
 		tier: "UU",
