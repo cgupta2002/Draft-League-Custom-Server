@@ -121,7 +121,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 
 	 lethalsuppression: {
 		desc: "If this Pokemon hits a foe with a Poison move, the target's Ability is removed.",
-		shortDesc: "If this Pokemon hits a foe with a Poison move, the the target's Ability is removed.",
+		shortDesc: "If this Pokemon hits a foe with a Poison move, the target's Ability is removed.",
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Poison') {
 				if (attacker.getAbility().flags['cantsuppress']) return;
@@ -136,8 +136,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 sharpdebris: {
-		desc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the foe's side.",
-		shortDesc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the foe's side.",
+		desc: "If this Pokemon is hit by a physical attack Sharp Steel are set on the foe's side.",
+		shortDesc: "If this Pokemon is hit by a physical attack, Sharp Steel are set on the foe's side.",
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 						
@@ -219,17 +219,14 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
 			if (!pokemon.hp) return;
-			const megaFoes = [];
+			const Foes = [];
 			for (const target of pokemon.foes()) {
-				if (target.baseSpecies.isMega) megaFoes.push(target);
+				Foes.push(target);
 			}
-			if (megaFoes.length) {
-				for (const target of megaFoes) {
+			if (Foes.length) {
+				for (const target of Foes) {
 					this.damage(target.baseMaxhp / 10, target, pokemon);
-					this.heal(target.baseMaxhp / 10);
 				}
-			} else {
-				this.heal(pokemon.baseMaxhp / 12);
 			}
 		},
 		name: "Ange",
