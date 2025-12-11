@@ -39,8 +39,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 
 	witchsbroom: {
-		desc: "Immune to ground type moves and resets teammate's stat changes on activation (Levitate + Curious Medicine).",
-		shortDesc: "Immune to ground type moves and resets teammate's stat changes on activation (Levitate + Curious Medicine).",
+		desc: "Immune to Ground moves; resets ally stat changes (Levitate + Curious Medicine).",
+		shortDesc: "Immune to Ground moves; resets ally stat changes (Levitate + Curious Medicine).",
 		onStart(pokemon) {
 			for (const ally of pokemon.adjacentAllies()) {
 				ally.clearBoosts();
@@ -54,8 +54,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 
 	barbedarmor: {
-		desc: "Pokemon making contact with this Pokemon lose 1/8th of their max HP and this Pokemon cannot be struck by a critical hit (Iron Barbs + Shell Armor).",
-		shortDesc: "Pokemon making contact with this Pokemon lose 1/8th of their max HP and this Pokemon cannot be struck by a critical hit (Iron Barbs + Shell Armor).",
+		desc: "Foes making contact lose 1/8 max HP; cannot be crit (Iron Barbs + Shell Armor).",
+		shortDesc: "Foes making contact lose 1/8 max HP; cannot be crit (Iron Barbs + Shell Armor).",
 		onCriticalHit: false,
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
@@ -70,8 +70,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 
 	warlock: {
-		desc: "This Pokemon's attack do not make contact with the target, and this Pokemon does not take recoil damage besides Struggle/Life Orb/crash damage (Long Reach + Rock Head).",
-		shortDesc: "This Pokemon's attack do not make contact with the target, and this Pokemon does not take recoil damage besides Struggle/Life Orb/crash damage (Long Reach + Rock Head).",
+		desc: "This Pokémon’s attacks never make contact; no move recoil (Long Reach + Rock Head).",
+		shortDesc: "This Pokémon’s attacks never make contact; no move recoil (Long Reach + Rock Head).",
 		onDamage(damage, target, source, effect) {
 			if (effect.id === 'recoil') {
 				if (!this.activeMove) throw new Error("Battle.activeMove is null");
@@ -120,8 +120,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 lethalsuppression: {
-		desc: "If this Pokemon hits a foe with a Poison move, the effect of the target's Ability is eliminated.",
-		shortDesc: "If this Pokemon hits a foe with a Poison move, the effect of the target's Ability is eliminated.",
+		desc: "If this Pokemon hits a foe with a Poison move, the target's Ability is removed.",
+		shortDesc: "If this Pokemon hits a foe with a Poison move, the the target's Ability is removed.",
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Poison') {
 				if (attacker.getAbility().flags['cantsuppress']) return;
@@ -136,8 +136,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 sharpdebris: {
-		desc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the opposing side.",
-		shortDesc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the opposing side.",
+		desc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the foe's side.",
+		shortDesc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the foe's side.",
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 						
@@ -157,7 +157,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 
 	 mindcontrol: {
 		desc: "If this Pokemon hits a foe with a special move, the foe will become confused.",
-		shortDesc: "Gain 1/12 of max HP at the end of every turn. Opposing Megas lose 1/10 max HP every turn.",
+		shortDesc: "If this Pokemon hits a foe with a special move, the foe will become confused.",
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
 			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
@@ -171,8 +171,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	 },
 
 	 stormabsorb: {
-		desc: "This Pokemon draws power Water and Electric moves to raise Sp. Atk by 1; Water immunity; Electric immunity (No Redirection).",
-		shortDesc: "This Pokemon draws power Water and Electric moves to raise Sp. Atk by 1; Water immunity; Electric immunity (No Redirection).",
+		desc: "Water and Electric moves boost Sp. Atk by 1; immune to both (No Redirection).",
+		shortDesc: "Water and Electric moves boost Sp. Atk by 1; immune to both (No Redirection).",
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
 				if (!this.boost({ spa: 1 })) {
