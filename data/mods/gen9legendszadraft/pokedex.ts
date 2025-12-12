@@ -94,7 +94,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	floettemega: {
 		inherit: true,
-		abilities: { 0: "Ange" },
+		abilities: { 0: "Eternal Light" },
 	},
 	malamarmega: {
 		inherit: true,

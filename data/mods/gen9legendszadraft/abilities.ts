@@ -1,5 +1,4 @@
 export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
-		// Draft League Custom
 	acidreflux: {
 		desc: "If this Pokemon is hit by a physical attack, poisons foe.",
 		shortDesc: "If this Pokemon is hit by a physical attack, poisons foe.",
@@ -14,7 +13,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 3.5,
 		num: 401,
 	},
-
 	lightningpulse: {
 		desc: "Immune to ground type moves and electric moves are 1.3x power (Levitate + Transistor).",
 		shortDesc: "Immune to ground type moves and electric moves are 1.3x power (Levitate + Transistor).",
@@ -37,7 +35,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 4,
 		num: 402,
 	},
-
 	witchsbroom: {
 		desc: "Immune to Ground moves; resets ally stat changes (Levitate + Curious Medicine).",
 		shortDesc: "Immune to Ground moves; resets ally stat changes (Levitate + Curious Medicine).",
@@ -52,7 +49,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 4,
 		num: 403,
 	},
-
 	barbedarmor: {
 		desc: "Foes making contact lose 1/8 max HP; cannot be crit (Iron Barbs + Shell Armor).",
 		shortDesc: "Foes making contact lose 1/8 max HP; cannot be crit (Iron Barbs + Shell Armor).",
@@ -68,7 +64,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 4,
 		num: 405,
 	},
-
 	warlock: {
 		desc: "This Pokémon’s attacks never make contact; no move recoil (Long Reach + Rock Head).",
 		shortDesc: "This Pokémon’s attacks never make contact; no move recoil (Long Reach + Rock Head).",
@@ -86,7 +81,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 3,
 		num: 406,
 	 },
-
 	 spiritabsorb: {
 		desc: "This Pokemon heals 1/4th of its max HP when hit by Ghost moves; Ghost immunity.",
 		shortDesc: "This Pokemon heals 1/4th of its max HP when hit by Ghost moves; Ghost immunity.",
@@ -103,7 +97,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 4.5,
 		num: 407,
 	 },
-
 	 solarshield: {
 		desc: "If Sunny Day is active, this Pokemon takes 0.67x damage from all direct attacks.",
 		shortDesc: "If Sunny Day is active, this Pokemon takes 0.67x damage from all direct attacks.",
@@ -118,15 +111,16 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 3.5,
 		num: 408,
 	 },
-
 	 lethalsuppression: {
 		desc: "If this Pokemon hits a foe with a Poison move, the target's Ability is removed.",
 		shortDesc: "If this Pokemon hits a foe with a Poison move, the target's Ability is removed.",
-		onModifyAtk(atk, attacker, defender, move) {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+
 			if (move.type === 'Poison') {
-				if (attacker.getAbility().flags['cantsuppress']) return;
-				if (attacker.newlySwitched || this.queue.willMove(attacker)) return;
-				attacker.addVolatile('gastroacid');
+				if (target.getAbility().flags['cantsuppress']) return;
+				target.addVolatile('gastroacid');
 			}
 		},
 		flags:{},
@@ -134,7 +128,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 3,
 		num:411,
 	 },
-
 	 sharpdebris: {
 		desc: "If this Pokemon is hit by a physical attack Sharp Steel are set on the foe's side.",
 		shortDesc: "If this Pokemon is hit by a physical attack, Sharp Steel are set on the foe's side.",
@@ -153,8 +146,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 3,
 		num:412,
 	 },
-	 
-
 	 mindcontrol: {
 		desc: "If this Pokemon hits a foe with a special move, the foe will become confused.",
 		shortDesc: "If this Pokemon hits a foe with a special move, the foe will become confused.",
@@ -169,7 +160,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating:3,
 		num:413,
 	 },
-
 	 stormabsorb: {
 		desc: "Water and Electric moves boost Sp. Atk by 1; immune to both (No Redirection).",
 		shortDesc: "Water and Electric moves boost Sp. Atk by 1; immune to both (No Redirection).",
@@ -192,7 +182,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 4,
 		num: 409,
 	 },
-
 	 chillingaura:{
 		desc: "While this Pokemon is active, an Ice move used by any Pokemon has 1.33x power.",
 		shortDesc: "While this Pokemon is active, an Ice move used by any Pokemon has 1.33x power.",
@@ -212,23 +201,19 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		rating: 4,
 		num: 410,
 	 },
-	 ange: {
+	 eternallight: {
 		desc: "Every Pokemon on the field except Mega Floette loses 1/10th of its max HP every turn.",
 		shortDesc: "Every Pokemon on the field except Mega Floette loses 1/10th of its max HP every turn.",
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
 			if (!pokemon.hp) return;
-			const Foes = [];
-			for (const target of pokemon.foes()) {
-				Foes.push(target);
-			}
-			if (Foes.length) {
-				for (const target of Foes) {
-					this.damage(target.baseMaxhp / 10, target, pokemon);
-				}
+			const allActives = this.sides.flatMap(side => side.active);
+			for (const target of allActives) {
+				if (!target.hp || target.species.id === 'floettemega') continue;
+				this.damage(target.baseMaxhp / 10, target, pokemon);
 			}
 		},
-		name: "Ange",
-	},
+		name: "Eternal Light",
 	}
+}
