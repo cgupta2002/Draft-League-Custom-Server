@@ -214,6 +214,9 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 				this.damage(target.baseMaxhp / 10, target, pokemon);
 			}
 		},
+		flags: { },
 		name: "Eternal Light",
+		rating: 4,
+		num: 414,
 	}
 }
