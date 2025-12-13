@@ -24,7 +24,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	charizardmegay: {
-		tier: "OU",
+		tier: "Uber",
 	},
 	squirtle: {
 		tier: "LC",
@@ -36,7 +36,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	blastoisemega: {
-		tier: "Uber",
+		tier: "OU",
 	},
 	weedle: {
 		tier: "LC",
@@ -96,7 +96,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 	},
 	alakazammega: {
-		tier: "Uber",
+		tier: "OU",
 	},
 	machop: {
 		tier: "LC",
@@ -450,7 +450,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	metagrossmega: {
-		tier: "Uber",
+		tier: "OU",
 	},
 	budew: {
 		tier: "LC",
@@ -486,7 +486,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	lucariomega: {
-		tier: "Uber",
+		tier: "OU",
 	},
 	hippopotas: {
 		tier: "LC",
