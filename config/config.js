@@ -423,6 +423,7 @@ exports.logchat = false;
  * logchallenges - whether to log challenge battles. Useful for tournament servers.
  */
 exports.logchallenges = false;
+exports.autosavereplays = true;
 
 /**
  * loguserstats - how often (in milliseconds) to write user stats to the
