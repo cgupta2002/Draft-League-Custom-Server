@@ -19,6 +19,9 @@ The column value will be ignored for repeat sections.
 
 export const Formats: import('../sim/dex-formats').FormatList = [
 	{
+		section: "Your only option"
+	},
+	{
 		name: "[Gen 9] Legends Z-A Draft",
 		mod: 'gen9legendszadraft',
 		gameType: 'doubles',
