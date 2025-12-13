@@ -148,6 +148,7 @@ class ModdedDex {
   }
   mod(mod) {
     if (!dexes["base"].modsLoaded) dexes["base"].includeMods();
+    console.log(mod);
     return dexes[mod || "base"].includeData();
   }
   forGen(gen) {
