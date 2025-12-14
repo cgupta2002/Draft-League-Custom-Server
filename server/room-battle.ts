@@ -944,7 +944,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 
 		await Monitor.logPath(logpath).mkdirp();
 		await Monitor.logPath(`${logpath}${this.room.getReplayData().id}.log.json`).write(JSON.stringify(logData));
-		// console.log(JSON.stringify(logData));
+		console.log(JSON.stringify(logData));
 	}
 	override onConnect(user: User, connection: Connection | null = null) {
 		if (this.ended && this.room.parent?.game?.constructor.name === 'BestOfGame') {
