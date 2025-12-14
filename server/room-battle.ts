@@ -859,9 +859,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 		Chat.runHandlers('onBattleEnd', this, winnerid, this.players.map(p => p.id));
 		if (this.room.rated && !this.options.isBestOfSubBattle) {
 			void this.updateLadder(p1score, winnerid);
-			void this.logBattle(p1score);
 		} else if (Config.logchallenges) {
-			console.log('battle')
 			void this.logBattle(p1score);
 			const uploader = Users.get(winnerid || this.p1.id);
 			if (uploader?.connections[0]) {
@@ -946,7 +944,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 
 		await Monitor.logPath(logpath).mkdirp();
 		await Monitor.logPath(`${logpath}${this.room.getReplayData().id}.log.json`).write(JSON.stringify(logData));
-		console.log(JSON.stringify(logData));
+		// console.log(JSON.stringify(logData));
 	}
 	override onConnect(user: User, connection: Connection | null = null) {
 		if (this.ended && this.room.parent?.game?.constructor.name === 'BestOfGame') {
