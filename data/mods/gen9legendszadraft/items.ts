@@ -13,6 +13,147 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			return true;
 		},
 	},
+	mirrorherb: {
+		inherit: true
+	},
+	powerherb: {
+		inherit: true
+	},
+	airballoon: {
+		inherit: true
+	},
+	loadeddice: {
+		inherit: true
+	},
+	heatrock: {
+		inherit: true
+	},
+	icyrock: {
+		inherit: true
+	},
+	damprock: {
+		inherit: true
+	},
+	smoothrock: {
+		inherit: true
+	},
+	redcard: {
+		inherit: true
+	},
+	roomservice: {
+		inherit: true
+	},
+	abilityshield: {
+		inherit: true
+	},
+	absorborb: {
+		inherit: true
+	},
+	adrenalineorb: {
+		inherit: true
+	},
+	aguavberry: {
+		inherit: true
+	},
+	blacksludge: {
+		inherit: true
+	},
+	blunderpolicy: {
+		inherit: true
+	},
+	clearamulet: {
+		inherit: true
+	},
+	covertcloak: {
+		inherit: true
+	},
+	ejectbutton: {
+		inherit: true
+	},
+	ejectpack: {
+		inherit: true
+	},
+	electricseed: {
+		inherit: true
+	},
+	figyberry: {
+		inherit: true
+	},
+	grassyseed: {
+		inherit: true
+	},
+	iapapaberry: {
+		inherit: true
+	},
+	ironball: {
+		inherit: true
+	},
+	laggingtail: {
+		inherit: true
+	},
+	leppaberry: {
+		inherit: true
+	},
+	lightclay: {
+		inherit: true
+	},
+	luminousmoss: {
+		inherit: true
+	},
+	mentalherb: {
+		inherit: true
+	},
+	metronome: {
+		inherit: true
+	},
+	magoberry: {
+		inherit: true
+	},
+	nanabberry: {
+		inherit: true
+	},
+	protectivepads: {
+		inherit: true
+	},
+	punchingglove: {
+		inherit: true
+	},
+	safetygoggles: {
+		inherit: true
+	},
+	salacberry: {
+		inherit: true
+	},
+	shedshell: {
+		inherit: true
+	},
+	brightpowder: {
+		inherit: true
+	},
+	starfberry: {
+		inherit: true
+	},
+	toxicorb: {
+		inherit: true
+	},
+	throatspray: {
+		inherit: true
+	},
+	toxicplate: {
+		inherit: true
+	},
+	utilityumbrella: {
+		inherit: true
+	},
+	wikiberry: {
+		inherit: true
+	},
+	widelens: {
+		inherit: true
+	},
+	zapplate: {
+		inherit: true
+	},
 	chesnaughtite: {
 		inherit: true,
 		isNonstandard: "Unobtainable",
