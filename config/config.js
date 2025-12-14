@@ -332,7 +332,7 @@ exports.punishmentautolock = false;
  */
 exports.restrictLinks = false;
 
-exports.nofswriting = true;
+exports.nofswriting = false;
 
 /**
  * whitelist - prevent users below a certain group from doing things
