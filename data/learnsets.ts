@@ -69480,7 +69480,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			healbell: ["7T"],
 			helpinghand: ["9M", "7T"],
 			hiddenpower: ["6M"],
-			lightofruin: ["9L50", "6L50"],
+			lightofruin: ["9M", "9L50", "6L50"],
 			luckychant: ["9L10", "6L10"],
 			magicalleaf: ["9M", "9L25", "6L25"],
 			magiccoat: ["7T"],
