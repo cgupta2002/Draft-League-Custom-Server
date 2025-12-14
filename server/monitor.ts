@@ -102,6 +102,7 @@ export const Monitor = new class {
 		if (Config.logsdir) {
 			return FS(pathModule.join(Config.logsdir, path));
 		}
+		console.log(FS(pathModule.join('logs', path)));
 		return FS(pathModule.join('logs', path));
 	}
 
