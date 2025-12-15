@@ -14,10 +14,12 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		},
 	},
 	mirrorherb: {
-		inherit: true
+		inherit: true,
+		isNonstandard: null
 	},
 	powerherb: {
-		inherit: true
+		inherit: true,
+		isNonstandard: null
 	},
 	airballoon: {
 		inherit: true
