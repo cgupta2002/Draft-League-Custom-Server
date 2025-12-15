@@ -15,20 +15,23 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	mirrorherb: {
 		inherit: true,
-		isNonstandard: null
+		isNonstandard: null,
 	},
 	powerherb: {
 		inherit: true,
-		isNonstandard: null
+		isNonstandard: null,
 	},
 	airballoon: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Future",
 	},
 	loadeddice: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Future",
 	},
 	heatrock: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Future",
 	},
 	icyrock: {
 		inherit: true
