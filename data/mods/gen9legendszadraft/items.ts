@@ -23,15 +23,15 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	airballoon: {
 		inherit: true,
-		isNonstandard: "Future",
+		isNonstandard: "Custom",
 	},
 	loadeddice: {
 		inherit: true,
-		isNonstandard: "Future",
+		isNonstandard: "Custom",
 	},
 	heatrock: {
 		inherit: true,
-		isNonstandard: "Future",
+		isNonstandard: "Custom",
 	},
 	icyrock: {
 		inherit: true
