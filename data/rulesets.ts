@@ -142,7 +142,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 				gen--;
 			}
 			console.log(this.ruleTable);
-			console.log(item.name);
+			console.log(item);
 			if (requireObtainable && item.isNonstandard) {
 				if (this.ruleTable.has(`+item:${item.id}`)) return;
 				return [`${set.name}'s item ${item.name} does not exist in Gen ${this.dex.gen}.`];
