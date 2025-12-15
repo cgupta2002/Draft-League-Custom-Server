@@ -15,11 +15,11 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	},
 	mirrorherb: {
 		inherit: true,
-		isNonstandard: null,
+		isNonstandard: "Custom",
 	},
 	powerherb: {
 		inherit: true,
-		isNonstandard: null,
+		isNonstandard: "Custom",
 	},
 	airballoon: {
 		inherit: true,
@@ -34,130 +34,172 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		isNonstandard: "Custom",
 	},
 	icyrock: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	damprock: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	smoothrock: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	redcard: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	roomservice: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	abilityshield: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	absorborb: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	adrenalineorb: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	aguavberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	blacksludge: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	blunderpolicy: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	clearamulet: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	covertcloak: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	ejectbutton: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	ejectpack: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	electricseed: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	figyberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	grassyseed: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	iapapaberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	ironball: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	laggingtail: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	leppaberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	lightclay: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	luminousmoss: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	mentalherb: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	metronome: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	magoberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	nanabberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	protectivepads: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	punchingglove: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	safetygoggles: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	salacberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	shedshell: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	brightpowder: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	starfberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	toxicorb: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	throatspray: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	toxicplate: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	utilityumbrella: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	wikiberry: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	widelens: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	zapplate: {
-		inherit: true
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	chesnaughtite: {
 		inherit: true,
