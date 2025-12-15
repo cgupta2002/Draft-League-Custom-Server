@@ -201,6 +201,10 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		isNonstandard: "Custom",
 	},
+	custapberry: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
 	chesnaughtite: {
 		inherit: true,
 		isNonstandard: "Unobtainable",
@@ -220,6 +224,90 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	diancite: {
 		inherit: true,
 		isNonstandard: "Unobtainable",
+	},
+	dracoplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	dreadplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	earthplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	fistplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	flameplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	fullincense: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	icicleplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	insectplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	ironplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	meadowplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	mindplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	mistyseed: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	pixieplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	psychicseed: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	rowapberry: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	skyplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	splashplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	spookyplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	stoneplate: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	terrainextender: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	zoomlens: {
+		inherit: true,
+		isNonstandard: "Custom",
 	},
 	zygardite: {
 		inherit: true,
