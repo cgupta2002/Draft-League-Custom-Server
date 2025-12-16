@@ -205,6 +205,46 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		isNonstandard: "Custom",
 	},
+	stickybarb: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	absorbbulb: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	gripclaw: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	bindingband: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	flameorb: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	razorfang: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	razorclaw: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	ringtarget: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	cellbattery: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
+	snowball: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
 	chesnaughtite: {
 		inherit: true,
 		isNonstandard: "Unobtainable",
