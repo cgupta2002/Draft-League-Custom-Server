@@ -353,18 +353,18 @@ export const handlers: Chat.Handlers = {
 				`During the public phase, you can discuss the state of the ladder <a href="/seasondiscussion">in a special chatroom.</a></div>`
 			);
 			room.setPrivate(false);
-			const seasonRoom = Rooms.search('seasondiscussion');
-			if (seasonRoom) {
-				const p1html = getUserHTML(user, room.battle.format);
-				const otherPlayer = user.id === room.battle.p1.id ? room.battle.p2 : room.battle.p1;
-				const otherUser = otherPlayer.getUser();
-				const p2html = otherUser ? getUserHTML(otherUser, room.battle.format) : `<username>${otherPlayer.name}</username>`;
-				const formatName = Dex.formats.get(room.battle.format).name;
-				seasonRoom.add(
-					`|raw|<a href="/${room.roomid}" class="ilink">${formatName} battle started between ` +
-					`${p1html} and ${p2html}. (rating: ${Math.floor(room.battle.rated)})</a>`
-				).update();
-			}
+			// const seasonRoom = Rooms.search('seasondiscussion');
+			// if (seasonRoom) {
+			// 	const p1html = getUserHTML(user, room.battle.format);
+			// 	const otherPlayer = user.id === room.battle.p1.id ? room.battle.p2 : room.battle.p1;
+			// 	const otherUser = otherPlayer.getUser();
+			// 	const p2html = otherUser ? getUserHTML(otherUser, room.battle.format) : `<username>${otherPlayer.name}</username>`;
+			// 	const formatName = Dex.formats.get(room.battle.format).name;
+			// 	seasonRoom.add(
+			// 		`|raw|<a href="/${room.roomid}" class="ilink">${formatName} battle started between ` +
+			// 		`${p1html} and ${p2html}. (rating: ${Math.floor(room.battle.rated)})</a>`
+			// 	).update();
+			// }
 		}
 
 		room.add(
