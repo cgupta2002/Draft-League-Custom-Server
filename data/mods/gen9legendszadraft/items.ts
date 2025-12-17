@@ -57,10 +57,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		isNonstandard: "Custom",
 	},
-	absorborb: {
-		inherit: true,
-		isNonstandard: "Custom",
-	},
 	adrenalineorb: {
 		inherit: true,
 		isNonstandard: "Custom",

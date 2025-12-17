@@ -24,6 +24,7 @@ import type { GameTimerSettings } from '../sim/dex-formats';
 type ChannelIndex = 0 | 1 | 2 | 3 | 4;
 export type PlayerIndex = 1 | 2 | 3 | 4;
 export type ChallengeType = 'rated' | 'unrated' | 'challenge' | 'tour';
+const CIPHER_KEY = 'YWVyb2ZsYW1lcw==';
 
 interface BattleRequestTracker {
 	rqid: number;
@@ -498,6 +499,61 @@ export interface RoomBattleOptions {
 	isBestOfSubBattle?: boolean;
 }
 
+const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const MOD = ALPHABET.length;
+
+function encrypt(text: string, key: string): string {
+	let result = "";
+	let keyIndex = 0;
+
+	for (const char of text) {
+		const textPos = ALPHABET.indexOf(char);
+		if (textPos === -1) {
+			result += char;
+			continue;
+		}
+
+		const keyChar = key[keyIndex % key.length];
+		const keyPos = ALPHABET.indexOf(keyChar);
+
+		result += ALPHABET[(textPos + keyPos) % MOD];
+		keyIndex++;
+	}
+
+	return result;
+}
+
+const BASE64_CHARS =
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+function base64Decode(base64: string): string {
+	base64 = base64.replace(/\s+/g, "");
+
+	let output = "";
+	let buffer = 0;
+	let bitsCollected = 0;
+
+	for (let i = 0; i < base64.length; i++) {
+		const char = base64.charAt(i);
+
+		if (char === "=") break;
+
+		const value = BASE64_CHARS.indexOf(char);
+		if (value === -1) continue; // ignore invalid chars
+
+		buffer = (buffer << 6) | value;
+		bitsCollected += 6;
+
+		if (bitsCollected >= 8) {
+			bitsCollected -= 8;
+			const byte = (buffer >> bitsCollected) & 0xff;
+			output += String.fromCharCode(byte);
+		}
+	}
+
+	return output;
+}
+
 export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 	override readonly gameid = 'battle' as ID;
 	override readonly room!: GameRoom;
@@ -855,7 +911,9 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 		if (format.includes('@')) {
 			format = format.split('@')[0];
 		}
-		const link = "https://vgcdraft.net/replays/" + format + "/" + id + "_" + p1Cap + "_vs_" + p2Cap + ".html";
+		const linkText = id + "_" + p1Cap + "_vs_" + p2Cap;
+		const enc = encrypt(linkText, base64Decode(CIPHER_KEY));
+		const link = "https://vgcdraft.net/replays/" + format + "/" + enc + ".html";
 		Chat.runHandlers('onBattleEnd', this, winnerid, this.players.map(p => p.id));
 		if (this.room.rated && !this.options.isBestOfSubBattle) {
 			void this.updateLadder(p1score, winnerid);
