@@ -345,6 +345,38 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		isNonstandard: "Custom",
 	},
+	marangaberry: {
+		inherit: true,
+		isNonstandard: "Custom"
+	},
+	jabocaberry: {
+		inherit: true,
+		isNonstandard: "Custom"
+	},
+	apicotberry: {
+		inherit: true,
+		isNonstandard: "Custom"
+	},
+	ganlonberry: {
+		inherit: true,
+		isNonstandard: "Custom"
+	},
+	keeberry: {
+		inherit: true,
+		isNonstandard: "Custom"
+	},
+	lansatberry: {
+		inherit: true,
+		isNonstandard: "Custom"
+	},
+	petayaberry: {
+		inherit: true,
+		isNonstandard: "Custom"
+	},
+	enigmaberry: {
+		inherit: true,
+		isNonstandard: "Custom"
+	},
 	zygardite: {
 		inherit: true,
 		onTakeItem(item, source) {
