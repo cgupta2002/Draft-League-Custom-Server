@@ -26,12 +26,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen9legendszadraft',
 		gameType: 'doubles',
 		bestOfDefault: true,
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3772808/">Discussion</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/posts/10749086">List of Changes</a>`,
-		],
+		threads: [],
 		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'VGC Timer', 'Terastal Clause', 'NatDex Mod', 'Evasion Moves Clause', 'Moody Clause', 'Gems Clause'],
 		banlist: ['Hail', 'Hidden Power', 'Berserk Gene', 'Battle Bond'],
+		unbanlist: ['Normal Gem'],
 		onValidateSet(set, format, setHas, teamHas) {
 			const species = this.dex.species.get(set.species);
 			if (set.moves.map(x => this.toID(this.dex.moves.get(x).realMove) || x).includes('hiddenpower') &&

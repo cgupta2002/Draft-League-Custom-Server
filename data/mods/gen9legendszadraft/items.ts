@@ -13,6 +13,10 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 			return true;
 		},
 	},
+	normalgem: {
+		inherit: true,
+		isNonstandard: "Custom",
+	},
 	mirrorherb: {
 		inherit: true,
 		isNonstandard: "Custom",
